@@ -1,0 +1,1 @@
+ngrok tcp --config=/path/to/ngrok.yml
