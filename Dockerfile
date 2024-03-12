@@ -12,8 +12,10 @@ ARG NGROK_TOKEN
 ENV NGROK_TOKEN=${NGROK_TOKEN}
 
 # Download ngrok binary and add it to the PATH
-RUN wget -O /usr/local/bin/ngrok https://bin.equinox.io/c/bNyj1mQVY4c/ngrok-v3-stable-linux-amd64.zip && \
-    unzip /usr/local/bin/ngrok -d /usr/local/bin
+# Download ngrok binary and add it to the PATH
+RUN wget -O /tmp/ngrok.zip https://bin.equinox.io/c/bNyj1mQVY4c/ngrok-v3-stable-linux-amd64.zip && \
+    unzip /tmp/ngrok.zip -d /usr/local/bin && \
+    rm /tmp/ngrok.zip
 
 # Create a directory for sshd to run
 RUN mkdir /run/sshd
