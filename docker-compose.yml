@@ -1,0 +1,21 @@
+version: '3'
+
+services:
+  odiyaan-ssh-ngrok:
+    build:
+      context: .
+    ports:
+      - "80:80"
+      - "8888:8888"
+      - "8080:8080"
+      - "443:443"
+      - "5130:5130"
+      - "5131:5131"
+      - "5132:5132"
+      - "5133:5133"
+      - "5134:5134"
+      - "5135:5135"
+      - "3306:3306"
+      - "2222:22"  # Map host port 2222 to container port 22 for SSH
+    environment:
+      NGROK_TOKEN: "2Xj9GlTTttWVgopT1ZdsxzY1y3U_67YMfTo4zV1wNJ6VbHP7o"
